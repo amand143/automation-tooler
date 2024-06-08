@@ -87,12 +87,11 @@ export const onDiscordConnect = async (
 }
 
 export const getDiscordConnectionUrl = async () => {
-  const user = await currentUser()
-  console.error("user discord", user?.id)
+  const user = process.env.UNIVERSAL_USER;
   if (user) {
     const webhook = await db.discordWebhook.findFirst({
       where: {
-        userId: user.id,
+        userId: "user_2h4BM2D3dE2xBmSkxXupLxUu7v6",
       },
       select: {
         url: true,

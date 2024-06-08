@@ -6,13 +6,13 @@ import { currentUser } from '@clerk/nextjs/server'
 type Props = {}
 
 const Settings = async (props: Props) => {
-  const authUser = await currentUser();
+  const authUser = process.env.UNIVERSAL_USER;
   if(!authUser)return null;
-  const user = await db.user.findUnique({where: {clerkId: authUser.id}});
+  const user = await db.user.findUnique({where: {clerkId: "user_2h4BM2D3dE2xBmSkxXupLxUu7v6"}});
   const onUpload = async (image: string) =>{
     'use server'
     const response = await db.user.update({
-      where: {clerkId: authUser.id},
+      where: {clerkId: "user_2h4BM2D3dE2xBmSkxXupLxUu7v6"},
       data: {
         profileImage: image,
       },
@@ -23,7 +23,7 @@ const Settings = async (props: Props) => {
     'use server'
     const response = await db.user.update({
       where: {
-        clerkId: authUser.id,
+        clerkId: "user_2h4BM2D3dE2xBmSkxXupLxUu7v6",
       },
       data: {
         profileImage: '',
@@ -36,7 +36,7 @@ const Settings = async (props: Props) => {
     'use server'
     const updatedUser = await db.user.update({
       where: {
-        clerkId: authUser.id
+        clerkId: "user_2h4BM2D3dE2xBmSkxXupLxUu7v6"
       },
       data: {
         name,

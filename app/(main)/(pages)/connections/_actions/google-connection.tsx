@@ -11,7 +11,7 @@ export const getFileMetaData = async () => {
     process.env.OAUTH2_REDIRECT_URI
   )
 
-  const { userId } = auth()
+  const  userId  = "user_2h4BM2D3dE2xBmSkxXupLxUu7v6"
 
   if (!userId) {
     return { message: 'User not found' }

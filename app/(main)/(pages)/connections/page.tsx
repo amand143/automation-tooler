@@ -53,16 +53,16 @@ const Connections = async (props: Props) => {
     team_id: '',
     team_name: '',
   }
-  const user = await currentUser()
-  if (!user) return null
-
+  const user = process.env.UNIVERSAL_USER
+if(!user)return null;
+  console.log("user here", user)
   const onUserConnections = async () => {
     await onDiscordConnect(
       channel_id!,
       webhook_id!,
       webhook_name!,
       webhook_url!,
-      user.id,
+      "user_2h4BM2D3dE2xBmSkxXupLxUu7v6",
       guild_name!,
       guild_id!
     )
@@ -72,7 +72,7 @@ const Connections = async (props: Props) => {
       workspace_icon!,
       workspace_name!,
       database_id!,
-      user.id
+      "user_2h4BM2D3dE2xBmSkxXupLxUu7v6"
     )
 
     await onSlackConnect(
@@ -83,12 +83,12 @@ const Connections = async (props: Props) => {
       bot_user_id!,
       team_id!,
       team_name!,
-      user.id
+      "user_2h4BM2D3dE2xBmSkxXupLxUu7v6"
     )
 
     const connections: any = {}
 
-    const user_info = await getUserData(user.id)
+    const user_info = await getUserData()
 
     user_info?.connections.map((connection) => {
       connections[connection.type] = true

@@ -4,7 +4,7 @@ import { auth, currentUser } from '@clerk/nextjs/server'
 import { Option } from '@/components/ui/multiple-selector'
 
 export const getGoogleListener = async () => {
-  const { userId } = auth()
+  const  userId  = "user_2h4BM2D3dE2xBmSkxXupLxUu7v6"
 console.log("getting google listener")
   if (userId) {
     const listener = await db.user.findUnique({
@@ -136,11 +136,11 @@ export const onCreateNodeTemplate = async (
 }
 
 export const onGetWorkflows = async () => {
-  const user = await currentUser()
+  const user = process.env.UNIVERSAL_USER
   if (user) {
     const workflow = await db.workflows.findMany({
       where: {
-        userId: user.id,
+        userId: "user_2h4BM2D3dE2xBmSkxXupLxUu7v6",
       },
     })
 
@@ -150,13 +150,13 @@ export const onGetWorkflows = async () => {
 
 
 export const onCreateWorkflow = async (name: string, description: string) => {
-  const user = await currentUser()
+  const user = process.env.UNIVERSAL_USER
 
   if (user) {
     //create new workflow
     const workflow = await db.workflows.create({
       data: {
-        userId: user.id,
+        userId: "user_2h4BM2D3dE2xBmSkxXupLxUu7v6",
         name,
         description,
       },

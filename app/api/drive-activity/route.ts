@@ -10,9 +10,8 @@ export async function GET() {
     process.env.GOOGLE_CLIENT_SECRET,
     process.env.OAUTH2_REDIRECT_URI
   )
-  const { userId } = auth()
-  const user = await currentUser();
-  console.error("user drive-activity", user)
+  const  userId  = "user_2h4BM2D3dE2xBmSkxXupLxUu7v6"
+  const user = process.env.UNIVERSAL_USER
   if (!userId) {
     return NextResponse.json({ message: 'User not found' })
   }

@@ -42,11 +42,11 @@ export const onSlackConnect = async (
 }
 
 export const getSlackConnection = async () => {
-  const user = await currentUser()
+  const user = process.env.UNIVERSAL_USER;
   if (user) {
     
     const connection=  await db.slack.findFirst({
-      where: { userId: user.id },
+      where: { userId: "user_2h4BM2D3dE2xBmSkxXupLxUu7v6" },
     })
     if(connection){
       return connection

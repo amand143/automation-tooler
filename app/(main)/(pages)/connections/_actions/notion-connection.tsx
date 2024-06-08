@@ -51,11 +51,11 @@ export const onNotionConnect = async (
 }
 
 export const getNotionConnection = async () => {
-  const user = await currentUser()
+  const user = process.env.UNIVERSAL_USER;
   if (user) {
     const connection = await db.notion.findFirst({
       where: {
-        userId: user.id,
+        userId: "user_2h4BM2D3dE2xBmSkxXupLxUu7v6",
       },
     })
     if (connection) {
