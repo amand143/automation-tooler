@@ -92,8 +92,7 @@ export const clients = [...new Array(10)].map((client, index) => ({
     },
   ]
 
-  export const menuOptions = [
-    { name: 'Dashboard', Component: Home, href: '/dashboard' },
+  export const menuOptions = [ 
     { name: 'Workflows', Component: Workflows, href: '/workflows' },
     { name: 'Settings', Component: Settings, href: '/settings' },
     { name: 'Connections', Component: Category, href: '/connections' },

@@ -16,6 +16,7 @@ const ProfilePicture = (props: Props) => {
         const response = await props.onDelete();
         if(response){
             router.refresh();
+            
         }
     }
     return (

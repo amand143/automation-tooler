@@ -7,9 +7,14 @@ import { HeroParallax } from "@/components/global/connect-parallax";
 import { products } from "@/lib/constant";
 import { LampComponent } from "@/components/global/lamp";
 import { CardBody, CardContainer, CardItem } from '@/components/global/3d-card'
-import { CheckIcon } from 'lucide-react'
+import { CheckIcon, Link } from 'lucide-react'
+import { Router } from "next/router";
+import { useRouter } from "next/navigation";
+
+
 
 export default function Home() {
+  
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
      <Navbar />
@@ -23,9 +28,11 @@ export default function Home() {
                   size={'lg'}
                   className="p-8 mb-8 md:mb-0 text-2xl w-full sm:w-fit border-t-2 rounded-full border-[#4D4D4D] bg-[#1F1F1F] hover:bg-white group transition-all flex items-center justify-center gap-4 hover:shadow-xl hover:shadow-neutral-500 duration-500"
                 >
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-neutral-500 to-neutral-600  md:text-center font-sans group-hover:bg-gradient-to-r group-hover:from-black goup-hover:to-black">
+         
+                  <a href='/connections' className="bg-clip-text text-transparent bg-gradient-to-r from-neutral-500 to-neutral-600  md:text-center font-sans group-hover:bg-gradient-to-r group-hover:from-black goup-hover:to-black">
                     Start For Free Today
-                  </span>
+                  </a>
+             
                 </Button>
                 <h1 className="text-5xl md:text-8xl  bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600 font-sans font-bold">
                   Automate Your Work With Tooler
