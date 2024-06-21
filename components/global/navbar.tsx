@@ -48,6 +48,22 @@ const Navbar = async (props: Props) =>{
         {user ? <UserButton afterSignOutUrl='/' />:null}
      
       </aside>
+      <aside className="flex items-center gap-4 md:hidden">
+        <Link
+          href="/connections"
+          className="relative inline-flex h-10 overflow-hidden rounded-full p-[2px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
+        >
+          <span className=" absolute inset-[-1000%]  bg-purple-200" />
+
+          <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
+            {user ? 'Dashboard' : 'Get Started'}
+          </span>
+        </Link>
+        {user ? <UserButton afterSignOutUrl='/' />:null}
+     
+      </aside>
+
+
     </header>
 }
 export default Navbar;
