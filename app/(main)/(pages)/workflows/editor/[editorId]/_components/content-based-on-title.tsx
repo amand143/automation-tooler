@@ -53,7 +53,7 @@ type Props = {
         if (response) {
           console.log(response.data.message.files[1])
           toast.message("Fetched File")
-          setFile(response.data.message.files[1])
+          setFile(response.data.message.files[3])
         } else {
           toast.error('Something went wrong')
         }

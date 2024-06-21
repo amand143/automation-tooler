@@ -14,14 +14,19 @@ const GoogleDriveFiles = (props: Props) => {
     const [loading, setLoading] = useState(false)
     const [isListening, setIsListening] = useState(false)
   
-    console.error("files called")
     const reqGoogle = async () => {
       setLoading(true)
+
+      console.error("files called")
       const response = await axios.get('/api/drive-activity')
       if (response) {
         toast.message(response.data)
         setLoading(false)
         setIsListening(true)
+        console.log(response)
+      }
+      else{
+        console.error("no response")
       }
       setIsListening(false)
     }

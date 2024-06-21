@@ -30,6 +30,7 @@ export async function POST(req: NextRequest) {
         },
       })
       if (workflow) {
+        console.log("workflow dounf")
         workflow.map(async (flow) => {
           const flowPath = JSON.parse(flow.flowPath!)
           console.log("length", flowPath)
