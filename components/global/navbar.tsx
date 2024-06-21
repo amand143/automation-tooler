@@ -65,8 +65,9 @@ const Navbar = async (props: Props) =>{
         {user ? <UserButton afterSignOutUrl='/' />:null}
      
       </aside>
-
-
     </header>
+
+
+
 }
 export default Navbar;
